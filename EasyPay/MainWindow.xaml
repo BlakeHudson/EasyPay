@@ -9,6 +9,6 @@
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Test for Git" VerticalAlignment="Top" Width="120" Margin="262,51,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="308,120,0,0" TextWrapping="Wrap" Text="Test 2" VerticalAlignment="Top" Width="120"/>
-
+        <TextBox Width="70" Height="20" Margin="308,120,0,0" Text="Simon Test"/>
     </Grid>
 </Window>
