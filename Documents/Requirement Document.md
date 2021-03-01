@@ -59,4 +59,8 @@
 
 14. **Name:** send_reminder  
    **Type:** Functional  
-   **Summary:** Sends an email reminder to customers who have balances owed and conditions set by user.
+   **Summary:** Sends an email reminder to customers who have balances owed and conditions set by user.  
+   
+15. **Name:** display_customers_pending_payment  
+   **Type:** Functional  
+   **Summary:** Display the customers that have not paid their invoice.
