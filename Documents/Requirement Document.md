@@ -10,7 +10,7 @@
     **Summary:** Add new customers to the system along with necessary information.  
 
 2. **Name:** delete_customer  
-   **Type:** Functional
+   **Type:** Functional  
    **Summary:** Customers can be removed when needed.  
 
 3. **Name:** provide_security  
