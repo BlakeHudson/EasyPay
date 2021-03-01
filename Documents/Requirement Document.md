@@ -1,5 +1,8 @@
 # EasyPay Requirements
 ## Team Members
+Simon Stockton  
+Blake Hudson  
+Lily Thompson  
 
 ## Purpose
 
