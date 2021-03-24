@@ -44,9 +44,8 @@ Lily Thompson
    **Type:** Functional  
    **Summary:** System should create an invoice using information from the customer and business.  
 
-10. **Name:** send_invoice  
+10. **Name:** delete_invoice  
    **Type:** Functional  
-<<<<<<< .mine
    **Summary:** System should delete an invoice using information from the customer and business.
 
 11. **Name:** modify_invoice  
@@ -55,34 +54,24 @@ Lily Thompson
 
 12. **Name:** send_invoice  
    **Type:** Functional  
-=======
-
-
-
-
-
-
-
-
->>>>>>> .theirs
    **Summary:** System should send customers an invoice after a customer makes a purchase.  
 
-11. **Name:** add_product  
+13. **Name:** add_product  
    **Type:** Functional  
    **Summary:** Products and their prices should be added.  
 
-12. **Name:** delete_product  
+14. **Name:** delete_product  
    **Type:** Functional  
    **Summary:** Products should be able to be deleted when necessary.
 
-13. **Name:** pay_amount  
+15. **Name:** pay_amount  
    **Type:** Functional  
    **Summary:** Accepts user payment on amount due.
 
-14. **Name:** send_reminder  
+16. **Name:** send_reminder  
    **Type:** Functional  
    **Summary:** Sends an email reminder to customers who have balances owed and conditions set by user.  
-
+   
 15. **Name:** display_customers_pending_payment  
    **Type:** Functional  
    **Summary:** Display the customers that have not paid their invoice.
