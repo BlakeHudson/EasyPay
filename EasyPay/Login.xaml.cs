@@ -23,5 +23,12 @@ namespace EasyPay
         {
             InitializeComponent();
         }
+
+        private void Login_Submit_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow dashboard = new MainWindow();
+            dashboard.Show();
+            this.Close();
+        }
     }
 }
