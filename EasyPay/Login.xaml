@@ -9,20 +9,17 @@
     <Window.Background>
         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
     </Window.Background>
-    <Grid>
+    <Grid Margin="0,0,3.6,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="121*"/>
-            <ColumnDefinition Width="418*"/>
-            <ColumnDefinition Width="254*"/>
-            <ColumnDefinition Width="0*"/>
+
         </Grid.ColumnDefinitions>
-        <Label Content="Login" Margin="258.403,32,85.4,311.4" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="1" />
+        <Label Content="Login" Margin="360,45,358.6,298" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" />
         <Label Content="User Name" Margin="71,190,72,195.4" FontSize="14" Grid.ColumnSpan="3"/>
         <Label Content="Password" Margin="71,269,72,116.4" FontSize="14" Grid.ColumnSpan="3"/>
 
-        <TextBox HorizontalAlignment="Left" Height="35" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="368" Margin="110.403,190,0,0" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <PasswordBox HorizontalAlignment="Left" Height="33" Margin="110.403,269,0,0" VerticalAlignment="Top" Width="368" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Margin="257.403,352,85.4,0" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Height="35" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="368" Margin="215,190,0,0" FontSize="14"/>
+        <PasswordBox HorizontalAlignment="Left" Height="33" Margin="215,269,0,0" VerticalAlignment="Top" Width="368" FontSize="14"/>
+        <Button Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Margin="360,333,358.6,0"/>
 
     </Grid>
 </Window>
