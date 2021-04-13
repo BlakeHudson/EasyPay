@@ -37,7 +37,7 @@ namespace EasyPay
             else
             {
                 MessageBox.Show("Incorrect credentials" +
-                    "\n" + "Please re-enter." );
+                    "\n" + "Please re-enter.");
             }
         }
     }

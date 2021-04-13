@@ -12,7 +12,7 @@ namespace EasyPay
 {
     public class SQLiteDataAccess
     {
-        public List<EasyPayUser> LoadUsers()
+        public static List<EasyPayUser> LoadUsers()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
