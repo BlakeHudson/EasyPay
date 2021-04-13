@@ -22,13 +22,23 @@ namespace EasyPay
         public Login()
         {
             InitializeComponent();
+
         }
 
         private void Login_Submit_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow dashboard = new MainWindow();
-            dashboard.Show();
-            this.Close();
+            if (Username.Text == passwordBox.Password)
+            {
+
+                MainWindow dashboard = new MainWindow();
+                dashboard.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect credentials" +
+                    "\n" + "Please re-enter." );
+            }
         }
     }
 }
