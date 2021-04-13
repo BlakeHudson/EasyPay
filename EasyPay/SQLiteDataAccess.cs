@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿// This class connects to the EasyPayDatabase.
+using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
