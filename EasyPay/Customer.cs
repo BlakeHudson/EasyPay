@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace EasyPay
 {
-    class Customer
+    public class Customer
     {
-        public string Name { get; set; }
+        public int ID { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
         public string Email { get; set; }
-        public Customer (string a, string b)
+        public Customer(int id, string a, string b, string c)
         {
-            Name = a;
-            Email = b;
-        } 
+            ID = id;
+            FName = a;
+            LName = b;
+            Email = c;
+        }
 
     }
 }
