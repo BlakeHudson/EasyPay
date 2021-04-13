@@ -12,6 +12,10 @@ namespace EasyPay
 
         public string Password { get; set; }
 
-
+        public EasyPayUser(String un, String pw)
+        {
+            this.UserName = un;
+            this.Password = pw; 
+        }
     }
 }

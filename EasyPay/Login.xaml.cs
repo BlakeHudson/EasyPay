@@ -19,9 +19,17 @@ namespace EasyPay
     /// </summary>
     public partial class Login : Window
     {
+        /*
+         * Upon application startup, the Login window is intialized.
+         * If there are no stored users in db, start add user form to add inital user.
+         */
         public Login()
         {
             InitializeComponent();
+            if (SQLiteDataAccess.LoadUsers().Count() == 0)
+            {
+                MessageBox.Show("Welcome new user!");
+            }
 
         }
 
