@@ -79,6 +79,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="SQLiteDataAccess.cs" />
     <Page Include="AddUser.xaml">
       <SubType>Designer</SubType>

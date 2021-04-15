@@ -13,6 +13,18 @@ namespace EasyPay
     class EmailManager
     {
         public Customer recepient;
+        public Order receipt;
+        String body;
+
+        public EmailManager(Customer a, Order b)
+        {
+            recepient = a;
+            receipt = b;
+            for(int i=0;i<receipt.size() ;i++)
+            {
+                body += receipt.getProductAtIndex(i).ToString();
+            }
+        }
        
         SmtpSender sender = new SmtpSender(() => new SmtpClient(host: "Smtp.gmail.com")
         {
@@ -28,9 +40,9 @@ namespace EasyPay
         {
             sender.Send(Email
                 .From(emailAddress: "noReply@noReply.com")
-                .To(emailAddress: recepient.Email, name: recepient.Name)
+                .To(emailAddress: recepient.Email, name: recepient.LName + ", " + recepient.LName)
                 .Subject(subject: "Service Invoice")
-                .Body(body: "This is an email to inform you of a requested payment from Company A")
+                .Body(body: "This is an email to inform you of a requested payment from Company A \n" + body)
                );
         }
     }

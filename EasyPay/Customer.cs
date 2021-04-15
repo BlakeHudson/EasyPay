@@ -12,6 +12,7 @@ namespace EasyPay
         public string FName { get; set; }
         public string LName { get; set; }
         public string Email { get; set; }
+
         public Customer(int id, string a, string b, string c)
         {
             ID = id;
