@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace EasyPay
 {
-    class Order
+    public class Order
     {
         int OrderID { get; set; }
+        int CustomerID { get; set; }
+        string OrderDate { get; set; }
         IList<Product> items;
 
         public Product getProductAtIndex(int index) {

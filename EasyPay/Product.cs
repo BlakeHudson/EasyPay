@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace EasyPay
 {
-    class Product
-    { 
+    public class Product
+    {
+        int ID { get; set; }
         String Name { get; set; }
         double Cost { get; set; }
 

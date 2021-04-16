@@ -47,6 +47,57 @@ namespace EasyPay
             }
         }
 
+        public static List<Order> LoadOrders()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<Order>("select * from Order", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
+        public static void SaveOrder(Order order)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("insert into Order (Order_ID, Customer_ID, Order_Date) values (@OrderID, @CustomerID, @OrderDate)", order);
+            }
+        }
+
+        public static List<OrderDetails> LoadOrderDetails()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<OrderDetails> ("select * from Order", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
+        public static void SaveOrderDetails(OrderDetails od)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("insert into Order Details (Order_ID, Product_ID, Product_Price) values (@OrderID, @ProductID, @ProductPrice)", od);
+            }
+        }
+
+        public static List<Product> LoadProducts()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<Product>("select * from Product", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
+        public static void SaveProducts(Product product)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("insert into Product (Product_ID, Product_Name, Product_Price) values (@ID, @name, @Cost)", product);
+            }
+        }
+
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
