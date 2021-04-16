@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Security.Cryptography;
 
 namespace EasyPay
 {
@@ -33,23 +34,23 @@ namespace EasyPay
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
         private void addUser_Submit_Click(object sender, RoutedEventArgs e)
         {
-            
+
             String un;
             String pw;
             String confirmPw;
-            EasyPayUser newUser;
+            //EasyPayUser newUser;
 
             un = newUsername.Text;
             pw = newPasswordBox.Password;
             confirmPw = confirmPasswordBox.Password;
 
-            if(pw == confirmPw)
+            if (pw == confirmPw)
             {
-                newUser = new EasyPayUser(un, pw);
-                SQLiteDataAccess.SaveUser(newUser);
+                //newUser = new EasyPayUser(un, pw);
+                //SQLiteDataAccess.SaveUser(newUser);
 
                 MessageBox.Show("New user added");
 
@@ -62,5 +63,6 @@ namespace EasyPay
                 MessageBox.Show("Please make sure passwords match");
             }
 
-
+        }
+    }
 }

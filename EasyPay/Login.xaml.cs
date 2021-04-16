@@ -30,8 +30,8 @@ namespace EasyPay
             {
                 MessageBox.Show("Welcome new user!");
 
-                AddUser addUser = new AddUser();
-                addUser.Show();
+                //AddUser addUser = new AddUser();
+                //addUser.Show();
                 this.Close();
             }
 
