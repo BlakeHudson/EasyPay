@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace EasyPay
 {
+    /// <summary>
+    /// Needed in the case of multiple products purchased per order
+    /// </summary>
     public class OrderDetails
     {
         int OrderID { get; set; }

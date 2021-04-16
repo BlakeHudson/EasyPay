@@ -13,13 +13,18 @@ namespace EasyPay
         public string LName { get; set; }
         public string Email { get; set; }
 
+        List<Order> OrderHistory;
+
         public Customer(int id, string a, string b, string c)
         {
             ID = id;
             FName = a;
             LName = b;
             Email = c;
+
+            OrderHistory = SQLiteDataAccess.GetOrderHistoryById(ID);
         }
+
 
     }
 }
