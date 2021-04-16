@@ -1,5 +1,4 @@
-﻿// This class connects to the EasyPayDatabase.
-using Dapper;
+﻿using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,8 +10,15 @@ using System.Threading.Tasks;
 
 namespace EasyPay
 {
+    /// <summary>
+    /// This class connects to the EasyPay Database.
+    /// </summary>
     public class SQLiteDataAccess
     {
+        /// <summary>
+        /// gets a list of users in the db
+        /// </summary>
+        /// <returns></returns>
         public static List<EasyPayUser> LoadUsers()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -22,6 +28,10 @@ namespace EasyPay
             }
         }
 
+        /// <summary>
+        /// adds a user to the db
+        /// </summary>
+        /// <param name="user"></param>
         public static void SaveUser(EasyPayUser user)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -30,6 +40,10 @@ namespace EasyPay
             }
         }
 
+        /// <summary>
+        /// gets list of customers from db
+        /// </summary>
+        /// <returns></returns>
         public static List<Customer> LoadCustomers()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -39,6 +53,10 @@ namespace EasyPay
             }
         }
 
+        /// <summary>
+        /// saves a customer to the db
+        /// </summary>
+        /// <param name="customer"></param>
         public static void SaveCustomer(Customer customer)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -47,6 +65,10 @@ namespace EasyPay
             }
         }
 
+        /// <summary>
+        /// gets list of all orders from db
+        /// </summary>
+        /// <returns></returns>
         public static List<Order> LoadOrders()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -56,6 +78,10 @@ namespace EasyPay
             }
         }
 
+        /// <summary>
+        /// saves an order to the db
+        /// </summary>
+        /// <param name="order"></param>
         public static void SaveOrder(Order order)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -64,6 +90,10 @@ namespace EasyPay
             }
         }
 
+        /// <summary>
+        /// gets order details from db
+        /// </summary>
+        /// <returns></returns>
         public static List<OrderDetails> LoadOrderDetails()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -73,6 +103,10 @@ namespace EasyPay
             }
         }
 
+        /// <summary>
+        /// saves an order's details to db
+        /// </summary>
+        /// <param name="od"></param>
         public static void SaveOrderDetails(OrderDetails od)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -81,6 +115,10 @@ namespace EasyPay
             }
         }
 
+        /// <summary>
+        /// gets list of products from db
+        /// </summary>
+        /// <returns></returns>
         public static List<Product> LoadProducts()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -90,6 +128,10 @@ namespace EasyPay
             }
         }
 
+        /// <summary>
+        /// saves a product to db
+        /// </summary>
+        /// <param name="product"></param>
         public static void SaveProducts(Product product)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -98,15 +140,25 @@ namespace EasyPay
             }
         }
 
-        public static List<Order> GetOrderHistory(Customer customer)
+        /// <summary>
+        /// gets all orders made by a customer by customer id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static List<Order> GetOrderHistoryById(int id)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<Order>("select * from Order where Customer_ID = " + customer.ID, new DynamicParameters());
+                var output = cnn.Query<Order>("select * from Order where Customer_ID = " + id, new DynamicParameters());
                 return output.ToList();
             }
         }
 
+        /// <summary>
+        /// connection to the db
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
