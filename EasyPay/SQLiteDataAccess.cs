@@ -98,6 +98,15 @@ namespace EasyPay
             }
         }
 
+        public static List<Order> GetOrderHistory(Customer customer)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<Order>("select * from Order where Customer_ID = " + customer.ID, new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;

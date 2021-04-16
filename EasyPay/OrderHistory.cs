@@ -11,9 +11,10 @@ namespace EasyPay
         Customer customer;
         List<Order> orders;
 
-        public OrderHistory()
+        public OrderHistory(Customer cust)
         {
-
+            customer = cust;
+            orders = SQLiteDataAccess.GetOrderHistory(customer);
         }
     }
 }
