@@ -29,6 +29,10 @@ namespace EasyPay
             if (SQLiteDataAccess.LoadUsers().Count() == 0)
             {
                 MessageBox.Show("Welcome new user!");
+
+                AddUser addUser = new AddUser();
+                addUser.Show();
+                this.Close();
             }
 
         }

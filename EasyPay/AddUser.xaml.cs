@@ -36,8 +36,9 @@ namespace EasyPay
             pw = newPasswordBox.Password;
 
             newUser = new EasyPayUser(un, pw);
-
             SQLiteDataAccess.SaveUser(newUser);
+
+            MessageBox.Show("New user added");
 
             MainWindow dashboard = new MainWindow();
             dashboard.Show();
