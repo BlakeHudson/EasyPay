@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace EasyPay
 {
@@ -30,8 +21,8 @@ namespace EasyPay
             {
                 MessageBox.Show("Welcome new user!");
 
-                //AddUser addUser = new AddUser();
-                //addUser.Show();
+                AddUser addUser = new AddUser();
+                addUser.Show();
                 this.Close();
             }
 
@@ -39,7 +30,25 @@ namespace EasyPay
 
         private void Login_Submit_Click(object sender, RoutedEventArgs e)
         {
-            if (Username.Text == passwordBox.Password)
+            string unEntered = Username.Text;
+
+            Boolean validUser(String epu)
+            {
+                List<EasyPayUser> userList = SQLiteDataAccess.LoadUsers();
+                
+                foreach (EasyPayUser user in userList)
+                {
+                    if (user.UserName == epu)
+                    {
+                        return true;
+                    }
+                }
+                    return false;               
+            }
+
+            
+
+            if (validUser(unEntered))
             {
 
                 MainWindow dashboard = new MainWindow();

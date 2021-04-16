@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Security.Cryptography;
+
 
 namespace EasyPay
 {
@@ -41,16 +41,16 @@ namespace EasyPay
             String un;
             String pw;
             String confirmPw;
-            //EasyPayUser newUser;
+            EasyPayUser newUser;
 
             un = newUsername.Text;
-            pw = newPasswordBox.Password;
-            confirmPw = confirmPasswordBox.Password;
+            pw = Encode_Decode.Encrypt(newPasswordBox.Password);
+            confirmPw = Encode_Decode.Encrypt(confirmPasswordBox.Password);
 
             if (pw == confirmPw)
             {
-                //newUser = new EasyPayUser(un, pw);
-                //SQLiteDataAccess.SaveUser(newUser);
+                newUser = new EasyPayUser(un, pw);
+                SQLiteDataAccess.SaveUser(newUser);
 
                 MessageBox.Show("New user added");
 
