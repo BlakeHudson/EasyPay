@@ -27,9 +27,15 @@ namespace EasyPay
             }
 
         }
-
+        /// <summary>
+        /// Handles login credienteials by verifying if the Username is contained in the db,
+        /// then checks for password accuracy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Login_Submit_Click(object sender, RoutedEventArgs e)
         {
+            // Username entered in Username Text box
             string unEntered = Username.Text;
 
             Boolean validUser(String epu)
@@ -47,7 +53,7 @@ namespace EasyPay
             }
 
             
-
+            // If the username exitst in db exit login screen and open main window
             if (validUser(unEntered))
             {
 
