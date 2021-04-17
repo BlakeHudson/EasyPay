@@ -38,15 +38,19 @@ namespace EasyPay
         private void addUser_Submit_Click(object sender, RoutedEventArgs e)
         {
 
-            String un;
-            String pw;
-            String confirmPw;
-            EasyPayUser newUser;
-
+            String un;          // To store username
+            String pw;          // To store entered password
+            String confirmPw;   // To store confirmed password
+            EasyPayUser newUser;// Init new EasyPayUser
+            
+            // Store entered username and encrypted passwords
             un = newUsername.Text;
             pw = Encode_Decode.Encrypt(newPasswordBox.Password);
             confirmPw = Encode_Decode.Encrypt(confirmPasswordBox.Password);
-
+            
+            // If password entered and confrirm passwords match, proceed to
+            // create an EasyPayUser with data etered and save it to db
+            // Inform user that a new user was added and open main window
             if (pw == confirmPw)
             {
                 newUser = new EasyPayUser(un, pw);
