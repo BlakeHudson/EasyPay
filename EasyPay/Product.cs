@@ -8,13 +8,13 @@ namespace EasyPay
 {
     public class Product
     {
-        int ID { get; set; }
-        String Name { get; set; }
-        double Cost { get; set; }
+        int Product_ID { get; set; }
+        String Product_Name { get; set; }
+        double Product_Price { get; set; }
 
         public override string ToString()
         {
-            return String.Format("{0,10}{1,6}\n",Name,Cost) ;
+            return String.Format("{0,10}{1,6}\n", Product_Name, Product_Price) ;
         }
     }
 }

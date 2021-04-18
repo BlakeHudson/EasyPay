@@ -8,18 +8,18 @@ namespace EasyPay
 {
     public class Customer
     {
-        public int ID { get; set; }
-        public string FName { get; set; }
-        public string LName { get; set; }
+        public int Customer_ID { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
         public string Email { get; set; }
 
         List<Order> OrderHistory;
 
         public Customer(int id, string a, string b, string c)
         {
-            ID = id;
-            FName = a;
-            LName = b;
+            Customer_ID = id;
+            First_Name = a;
+            Last_Name = b;
             Email = c;
 
             OrderHistory = SQLiteDataAccess.GetOrderHistoryById(ID);

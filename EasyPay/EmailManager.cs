@@ -40,7 +40,7 @@ namespace EasyPay
         {
             sender.Send(Email
                 .From(emailAddress: "noReply@noReply.com")
-                .To(emailAddress: recepient.Email, name: recepient.LName + ", " + recepient.LName)
+                .To(emailAddress: recepient.Email, name: recepient.Last_Name + ", " + recepient.Last_Name)
                 .Subject(subject: "Service Invoice")
                 .Body(body: "This is an email to inform you of a requested payment from Company A \n" + body)
                );

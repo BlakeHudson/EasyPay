@@ -8,9 +8,9 @@ namespace EasyPay
 {
     public class Order
     {
-        int OrderID { get; set; }
-        int CustomerID { get; set; }
-        string OrderDate { get; set; }
+        int Order_ID { get; set; }
+        int Customer_ID { get; set; }
+        string Order_Date { get; set; }
         IList<Product> items;
 
         public Product getProductAtIndex(int index) {

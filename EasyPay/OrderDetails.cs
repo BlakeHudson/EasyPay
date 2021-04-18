@@ -11,9 +11,9 @@ namespace EasyPay
     /// </summary>
     public class OrderDetails
     {
-        int OrderID { get; set; }
-        int ProductID { get; set; }
-        double ProductPrice { get; set; }
+        int Order_ID { get; set; }
+        int Product_ID { get; set; }
+        double Product_Price { get; set; }
 
         public OrderDetails()
         {
@@ -22,9 +22,9 @@ namespace EasyPay
 
         public OrderDetails(int Orderid, int Productid, double price)
         {
-            OrderID = Orderid;
-            ProductID = Productid;
-            ProductPrice = price;
+            Order_ID = Orderid;
+            Product_ID = Productid;
+            Product_Price = price;
         }
     }
 }
