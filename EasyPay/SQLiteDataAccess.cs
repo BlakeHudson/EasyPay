@@ -36,7 +36,7 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into User (USER_NAME, PASSWORD) values (@UserName, @Password)", user);
+                cnn.Execute("insert into User (UserName, Password) values (@UserName, @Password)", user);
             }
         }
 
