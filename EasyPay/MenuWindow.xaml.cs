@@ -27,6 +27,10 @@ namespace EasyPay
             LoadCustomerList();
         }
 
+        /// <summary>
+        /// gets all customers from db and displays them in 
+        /// CustomerListBox using WireUpPeopleList method
+        /// </summary>
         public void LoadCustomerList()
         {
             customers = SQLiteDataAccess.LoadCustomers();
@@ -34,11 +38,22 @@ namespace EasyPay
             WireUpPeopleList(customers);
         }
 
+        /// <summary>
+        /// sets CustomerListBox to show a list of customers
+        /// using List parameter
+        /// </summary>
+        /// <param name="customers"></param>
         public void WireUpPeopleList(List<Customer> customers)
         {
             CustomerListBox.ItemsSource = customers;
         }
 
+        /// <summary>
+        /// Finds all customers that contain the text entered in SearchBar
+        /// and sets CustomerlistBox to the result
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             List<Customer> searchedCustomers = new List<Customer>();
