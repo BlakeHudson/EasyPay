@@ -23,6 +23,10 @@ namespace EasyPay
         public MainWindow()
         {
             InitializeComponent();
+
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            this.Close();
         }
     }
 }
