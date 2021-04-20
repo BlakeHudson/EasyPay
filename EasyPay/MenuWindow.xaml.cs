@@ -31,17 +31,24 @@ namespace EasyPay
         {
             customers = SQLiteDataAccess.LoadCustomers();
 
-            WireUpPeopleList();
+            WireUpPeopleList(customers);
         }
 
-        public void WireUpPeopleList()
+        public void WireUpPeopleList(List<Customer> customers)
         {
             CustomerListBox.ItemsSource = customers;
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
+            List<Customer> searchedCustomers = new List<Customer>();
+            foreach (Customer customer in customers)
+            {
+                if (customer.ToString().Contains(SearchBar.Text))
+                    searchedCustomers.Add(customer);
+            }
 
+            WireUpPeopleList(searchedCustomers);
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
