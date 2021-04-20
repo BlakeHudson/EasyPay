@@ -22,5 +22,10 @@ namespace EasyPay
             this.UserName = un;
             this.Password = pw; 
         }
+        override
+        public String ToString()
+        {
+            return ("Username: " + this.UserName);
+        }
     }
 }

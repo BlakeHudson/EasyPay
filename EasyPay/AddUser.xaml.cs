@@ -48,9 +48,10 @@ namespace EasyPay
             pw = Encode_Decode.Encrypt(newPasswordBox.Password);
             confirmPw = Encode_Decode.Encrypt(confirmPasswordBox.Password);
             
-            // If password entered and confrirm passwords match, proceed to
-            // create an EasyPayUser with data etered and save it to db
-            // Inform user that a new user was added and open main window
+            /* If password entered and confrirm passwords match, proceed to
+            * create an EasyPayUser with data etered and save it to db
+            * Inform user that a new user was added and open main window
+            */
             if (pw == confirmPw)
             {
                 newUser = new EasyPayUser(un, pw);

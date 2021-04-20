@@ -41,7 +41,7 @@ namespace EasyPay
             Boolean validUser(String epu)
             {
                 List<EasyPayUser> userList = SQLiteDataAccess.LoadUsers();
-                
+
                 foreach (EasyPayUser user in userList)
                 {
                     if (user.UserName == epu)
@@ -49,10 +49,10 @@ namespace EasyPay
                         return true;
                     }
                 }
-                    return false;               
+                return false;
             }
 
-            
+
             // If the username exitst in db exit login screen and open main window
             if (validUser(unEntered))
             {
