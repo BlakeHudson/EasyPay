@@ -73,7 +73,7 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<Order>("select * from Order", new DynamicParameters());
+                var output = cnn.Query<Order>("select * from [Order]", new DynamicParameters());
                 return output.ToList();
             }
         }
@@ -86,7 +86,7 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into Order (Order_ID, Customer_ID, Order_Date) values (@Order_ID, @Customer_ID, @Order_Date)", order);
+                cnn.Execute("insert into [Order] (Order_ID, Customer_ID, Order_Date) values (@Order_ID, @Customer_ID, @Order_Date)", order);
             }
         }
 
@@ -98,7 +98,7 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<OrderDetails> ("select * from Order", new DynamicParameters());
+                var output = cnn.Query<OrderDetails> ("select * from [Order Details]", new DynamicParameters());
                 return output.ToList();
             }
         }
@@ -111,7 +111,7 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into [Order Details] (Order_ID, Product_ID, Product_Price) values (@Order_ID, @ProductID, @ProductPrice)", od);
+                cnn.Execute("insert into [Order Details] (Order_ID, Product_ID) values (@Order_ID, @ProductID)", od);
             }
         }
 
@@ -149,7 +149,19 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<Order>("select * from Order where Customer_ID = " + id, new DynamicParameters());
+                string Query = "select * from [Order] where Customer_ID = " + id;
+                var output = cnn.Query<Order>(Query, new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
+        public static List<Product> GetProductsByOrderID(int id)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string query = "Select P.Product_ID, Product_Name, Product_Price From ([Order] O inner join [Order_Details] OD On O.Order_ID = OD.Order_ID)" +
+                " inner join Product P On OD.Product_ID = P.Product_ID Where O.Order_ID = " + id;
+                var output = cnn.Query<Product>(query, new DynamicParameters());
                 return output.ToList();
             }
         }

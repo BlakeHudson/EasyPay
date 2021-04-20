@@ -81,5 +81,28 @@ namespace EasyPay
         {
             LoadCustomerList();
         }
+
+        private void InfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            int id;
+            Customer searchedFor = new Customer();
+            if (CustomerListBox.SelectedItem != null)
+            {
+                id = int.Parse(CustomerListBox.SelectedItem.ToString().Substring(0, 1));
+                foreach (Customer customer in customers)
+                {
+                    if (customer.Customer_ID == id)
+                    {
+                        searchedFor = customer;
+                        break;
+                    }
+                }
+
+                CustomerInfoWindow customerInfoWindow = new CustomerInfoWindow(searchedFor);
+                customerInfoWindow.Show();
+                this.Close();
+
+            }
+        }
     }
 }

@@ -1,0 +1,24 @@
+﻿<Window x:Class="EasyPay.CustomerInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EasyPay"
+        mc:Ignorable="d"
+        Title="CustomerInfoWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock x:Name="CustIDBlock" HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Customer ID: " VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="LNameBlock" HorizontalAlignment="Left" Margin="60,60,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Height="30" Width="70"/>
+        <TextBox x:Name="LNameBox" HorizontalAlignment="Left" Height="24" Margin="60,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="FNameBlock" HorizontalAlignment="Left" Margin="230,60,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top"/>
+        <TextBox x:Name="FNameBox" HorizontalAlignment="Left" Height="23" Margin="230,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="EmailBlock" HorizontalAlignment="Left" Margin="400,60,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top"/>
+        <TextBox x:Name="EmailBox" HorizontalAlignment="Left" Height="23" Margin="400,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160"/>
+        <ListBox x:Name="OrderListBox" HorizontalAlignment="Left" Height="190" Margin="60,180,0,0" VerticalAlignment="Top" Width="230"/>
+        <ListBox x:Name="ProductListBox" HorizontalAlignment="Left" Height="190" Margin="400,180,0,0" VerticalAlignment="Top" Width="230"/>
+        <TextBlock x:Name="ordersBlock" HorizontalAlignment="Left" Margin="60,140,0,0" TextWrapping="Wrap" Text="Orders:" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="ProductShowButton" Content="ShowProducts" HorizontalAlignment="Left" Margin="203,140,0,0" VerticalAlignment="Top" Width="87" Click="ProductShowButton_Click"/>
+        <TextBlock x:Name="productsBlock" HorizontalAlignment="Left" Margin="400,140,0,0" TextWrapping="Wrap" Text="Products Ordered:" VerticalAlignment="Top" FontSize="14"/>
+
+    </Grid>
+</Window>

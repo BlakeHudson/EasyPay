@@ -11,14 +11,36 @@ namespace EasyPay
         int Order_ID { get; set; }
         int Customer_ID { get; set; }
         string Order_Date { get; set; }
+        int Product_ID { get; set; }
+
         IList<Product> items;
 
-        public Product getProductAtIndex(int index) {
+        public Order()
+        {
+
+        }
+
+        public Order(int oId, int cId, string od)
+        {
+            Order_ID = oId;
+            Customer_ID = cId;
+            Order_Date = od;
+        }
+
+
+        public Product getProductAtIndex(int index)
+        {
             return items[index];
         }
         public int size()
         {
             return items.Count();
         }
+
+        public override string ToString()
+        {
+            return Order_ID + ", Order Date: " + Order_Date;
+        }
+
     }
 }

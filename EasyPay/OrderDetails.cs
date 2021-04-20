@@ -13,18 +13,16 @@ namespace EasyPay
     {
         int Order_ID { get; set; }
         int Product_ID { get; set; }
-        double Product_Price { get; set; }
 
         public OrderDetails()
         {
 
         }
 
-        public OrderDetails(int Orderid, int Productid, double price)
+        public OrderDetails(int Orderid, int Productid)
         {
             Order_ID = Orderid;
             Product_ID = Productid;
-            Product_Price = price;
         }
     }
 }

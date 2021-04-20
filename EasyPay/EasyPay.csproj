@@ -82,6 +82,9 @@
     <Compile Include="AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomerInfoWindow.xaml.cs">
+      <DependentUpon>CustomerInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Encode_Decode.cs" />
     <Compile Include="MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
@@ -91,6 +94,10 @@
     <Compile Include="Product.cs" />
     <Compile Include="SQLiteDataAccess.cs" />
     <Page Include="AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

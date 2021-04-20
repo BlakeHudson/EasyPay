@@ -60,7 +60,7 @@ namespace EasyPay
                 MessageBox.Show("New user added");
 
                 MainWindow dashboard = new MainWindow();
-                dashboard.Show();
+                //dashboard.Show();
                 this.Close();
             }
             else
