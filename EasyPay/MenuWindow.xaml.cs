@@ -70,5 +70,16 @@ namespace EasyPay
         {
 
         }
+
+        /// <summary>
+        /// refreshes CustomerListBox and resets customers by
+        /// reloading db Customers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadCustomerList();
+        }
     }
 }
