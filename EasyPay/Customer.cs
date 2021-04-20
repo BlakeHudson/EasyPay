@@ -15,6 +15,11 @@ namespace EasyPay
 
         List<Order> OrderHistory;
 
+        public Customer()
+        {
+
+        }
+
         public Customer(int id, string a, string b, string c)
         {
             Customer_ID = id;
@@ -22,9 +27,12 @@ namespace EasyPay
             Last_Name = b;
             Email = c;
 
-            OrderHistory = SQLiteDataAccess.GetOrderHistoryById(ID);
+            OrderHistory = SQLiteDataAccess.GetOrderHistoryById(Customer_ID);
         }
 
-
+        public override string ToString()
+        {
+            return Customer_ID + ": " + Last_Name + ", " + First_Name + " " + Email;
+        }
     }
 }

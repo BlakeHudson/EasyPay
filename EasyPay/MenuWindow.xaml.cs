@@ -10,18 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace EasyPay
 {
     /// <summary>
-    /// Interaction logic for MainPage.xaml
+    /// Interaction logic for MenuWindow.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class MenuWindow : Window
     {
         List<Customer> customers = new List<Customer>();
-        public MainPage()
+        public MenuWindow()
         {
             InitializeComponent();
 
@@ -37,9 +36,7 @@ namespace EasyPay
 
         public void WireUpPeopleList()
         {
-            CustomerBox.Text = null;
-            //will get back to this
-            //when an iterator for customers is created
+            CustomerListBox.ItemsSource = customers;
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)

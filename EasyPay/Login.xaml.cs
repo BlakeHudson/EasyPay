@@ -58,7 +58,7 @@ namespace EasyPay
             {
 
                 MainWindow dashboard = new MainWindow();
-                dashboard.Show();
+                //dashboard.Show();  
                 this.Close();
             }
             else
