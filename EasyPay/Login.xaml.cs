@@ -44,7 +44,7 @@ namespace EasyPay
 
                 foreach (EasyPayUser user in userList)
                 {
-                    if (user.UserName == epu)
+                    if (user.User_Name == epu)
                     {
                         return true;
                     }
