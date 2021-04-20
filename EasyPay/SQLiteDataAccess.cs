@@ -166,6 +166,16 @@ namespace EasyPay
             }
         }
 
+        public static void updateCustomer(Customer customer)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("update Customer set First_Name = " + customer.First_Name + " where Customer_ID = " + customer.Customer_ID, customer);
+                cnn.Execute("update Customer set Last_Name = " + customer.Last_Name + " where Customer_ID = " + customer.Customer_ID, customer);
+                cnn.Execute("update Customer set Email = " + customer.Email + " where Customer_ID = " + customer.Customer_ID, customer);
+            }
+        }
+
         /// <summary>
         /// connection to the db
         /// </summary>

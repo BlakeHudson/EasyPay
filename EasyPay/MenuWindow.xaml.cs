@@ -104,5 +104,10 @@ namespace EasyPay
 
             }
         }
+
+        private void AddCustButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

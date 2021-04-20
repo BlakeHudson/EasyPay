@@ -26,6 +26,7 @@ namespace EasyPay
         {
             InitializeComponent();
             cust = c;
+            CustIDBlock.Text = "Customer ID: " + cust.Customer_ID;
             LoadAll();
         }
 
@@ -62,6 +63,19 @@ namespace EasyPay
                 id = int.Parse(OrderListBox.SelectedItem.ToString().Substring(0, 1));
                 ProductListBox.ItemsSource = SQLiteDataAccess.GetProductsByOrderID(id);
             }
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            cust.Last_Name = LNameBox.Text;
+            cust.First_Name = FNameBox.Text;
+            cust.Email = EmailBox.Text;
+            SQLiteDataAccess.updateCustomer(cust);
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
