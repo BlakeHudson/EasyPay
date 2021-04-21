@@ -71,9 +71,20 @@ namespace EasyPay
             cust.First_Name = FNameBox.Text;
             cust.Email = EmailBox.Text;
             SQLiteDataAccess.updateCustomer(cust);
+
+            MessageBox.Show("Customer info updated.");
+
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            this.Close();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddOrderButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -20,6 +20,13 @@ namespace EasyPay
 
         }
 
+        public Customer( string a, string b, string c)
+        {
+            First_Name = a;
+            Last_Name = b;
+            Email = c;
+        }
+
         public Customer(int id, string a, string b, string c)
         {
             Customer_ID = id;

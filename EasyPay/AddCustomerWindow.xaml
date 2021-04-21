@@ -1,0 +1,19 @@
+﻿<Window x:Class="EasyPay.AddCustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EasyPay"
+        mc:Ignorable="d"
+        Title="AddCustomerWindow" Height="400" Width="455">
+    <Grid>
+        <TextBlock x:Name="FNameBlock" HorizontalAlignment="Left" Margin="100,100,0,0" TextWrapping="Wrap" Text="First Name: " VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock x:Name="LNameBlock" HorizontalAlignment="Left" Margin="101,150,0,0" TextWrapping="Wrap" Text="Last Name: " VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock x:Name="EmailBlock" HorizontalAlignment="Left" Margin="129,200,0,0" TextWrapping="Wrap" Text="Email: " VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="fnameBox" HorizontalAlignment="Left" Height="23" Margin="232,102,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="lnameBox" HorizontalAlignment="Left" Height="23" Margin="232,153,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Height="23" Margin="232,199,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="updateBtn" Content="Add Customer" HorizontalAlignment="Left" Margin="150,280,0,0" VerticalAlignment="Top" Width="110" FontSize="14" Click="updateBtn_Click"/>
+
+    </Grid>
+</Window>

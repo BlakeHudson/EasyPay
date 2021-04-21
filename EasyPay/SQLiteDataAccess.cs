@@ -61,7 +61,7 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into Customer (Customer_ID, First_Name, Last_Name, Email) values (@Customer_ID, @First_Name, @Last_Name, Email)", customer);
+                cnn.Execute("insert into Customer (First_Name, Last_Name, Email) values (@First_Name, @Last_Name, @Email)", customer);
             }
         }
 
@@ -170,9 +170,9 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("update Customer set First_Name = " + customer.First_Name + " where Customer_ID = " + customer.Customer_ID, customer);
-                cnn.Execute("update Customer set Last_Name = " + customer.Last_Name + " where Customer_ID = " + customer.Customer_ID, customer);
-                cnn.Execute("update Customer set Email = " + customer.Email + " where Customer_ID = " + customer.Customer_ID, customer);
+                cnn.Execute("update Customer set First_Name = '" + customer.First_Name + "' where Customer_ID = " + customer.Customer_ID, customer);
+                cnn.Execute("update Customer set Last_Name = '" + customer.Last_Name + "' where Customer_ID = " + customer.Customer_ID, customer);
+                cnn.Execute("update Customer set Email = '" + customer.Email + "' where Customer_ID = " + customer.Customer_ID, customer);
             }
         }
 
