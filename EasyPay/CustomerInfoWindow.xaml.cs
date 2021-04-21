@@ -81,7 +81,12 @@ namespace EasyPay
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            SQLiteDataAccess.deleteCustomer(cust);
+            MessageBox.Show("Customer info deleted.");
 
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            this.Close();
         }
 
         private void AddOrderButton_Click(object sender, RoutedEventArgs e)

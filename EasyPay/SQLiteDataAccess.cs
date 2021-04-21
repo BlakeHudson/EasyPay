@@ -176,6 +176,14 @@ namespace EasyPay
             }
         }
 
+        public static void deleteCustomer(Customer customer)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("Delete From Customer where Customer_ID = " + customer.Customer_ID, customer);
+            }
+        }
+
         /// <summary>
         /// connection to the db
         /// </summary>
