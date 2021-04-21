@@ -27,11 +27,13 @@ namespace EasyPay
             Order_Date = od;
         }
 
-
+        //Returns product from array at a given index
         public Product getProductAtIndex(int index)
         {
             return items[index];
+           
         }
+
         public int size()
         {
             return items.Count();

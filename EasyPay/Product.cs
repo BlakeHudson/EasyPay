@@ -12,9 +12,10 @@ namespace EasyPay
         String Product_Name { get; set; }
         double Product_Price { get; set; }
 
+        //Returns the product info in the format "Item_Name      Item_Cost"
         public override string ToString()
         {
-            return String.Format("{0,10}{1,6}\n", Product_Name, Product_Price) ;
+            return String.Format("{0,10}{1,6}\n", Product_Name, "$"+Product_Price) ;
         }
     }
 }

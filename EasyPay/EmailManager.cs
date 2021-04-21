@@ -26,6 +26,7 @@ namespace EasyPay
             }
         }
        
+        //builds credentials to send email
         SmtpSender sender = new SmtpSender(() => new SmtpClient(host: "Smtp.gmail.com")
         {
             UseDefaultCredentials = false,
@@ -35,12 +36,12 @@ namespace EasyPay
         });
         
                
-
+        //Builds email and sends it
         public void SendEmail()
         {
             sender.Send(Email
                 .From(emailAddress: "noReply@noReply.com")
-                .To(emailAddress: recepient.Email, name: recepient.Last_Name + ", " + recepient.Last_Name)
+                .To(emailAddress: recepient.Email, name: recepient.Last_Name + ", " + recepient.First_Name)
                 .Subject(subject: "Service Invoice")
                 .Body(body: "This is an email to inform you of a requested payment from Company A \n" + body)
                );
