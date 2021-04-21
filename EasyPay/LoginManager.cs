@@ -42,7 +42,7 @@ namespace EasyPay
 
             foreach (EasyPayUser user in userList)
             {
-                if (user.UserName == enteredUser)
+                if (user.User_Name == enteredUser)
                 {
                     return userList.IndexOf(user);
                 }
