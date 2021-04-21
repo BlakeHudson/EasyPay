@@ -8,7 +8,7 @@ namespace EasyPay
 {
     public class EasyPayUser
     {
-        public string UserName { get; set; }
+        public string User_Name { get; set; }
 
         public string Password { get; set; }
 
@@ -19,13 +19,13 @@ namespace EasyPay
 
         public EasyPayUser(String un, String pw)
         {
-            this.UserName = un;
+            this.User_Name = un;
             this.Password = pw; 
         }
         override
         public String ToString()
         {
-            return ("Username: " + this.UserName);
+            return ("Username: " + this.User_Name);
         }
     }
 }
