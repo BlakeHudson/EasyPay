@@ -37,24 +37,10 @@ namespace EasyPay
         {
             // Username entered in Username Text box
             string unEntered = Username.Text;
-
-            Boolean validUser(String epu)
-            {
-                List<EasyPayUser> userList = SQLiteDataAccess.LoadUsers();
-
-                foreach (EasyPayUser user in userList)
-                {
-                    if (user.UserName == epu)
-                    {
-                        return true;
-                    }
-                }
-                return false;
-            }
-
-
-            // If the username exitst in db exit login screen and open main window
-            if (validUser(unEntered))
+            int userIndex = LoginManager.indexOfUser(unEntered);
+           
+            // If the username is valid and password is correct continue, else bad credientials
+            if (userIndex >= 0 && LoginManager.validPassword(userIndex, unEntered))
             {
 
                 MainWindow dashboard = new MainWindow();

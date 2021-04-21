@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetails.cs" />
+    <Compile Include="LoginManager.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="SQLiteDataAccess.cs" />
     <Page Include="AddUser.xaml">
