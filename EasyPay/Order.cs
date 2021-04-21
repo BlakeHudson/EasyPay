@@ -27,6 +27,14 @@ namespace EasyPay
             Order_Date = od;
         }
 
+        public Order(int oId, int cId, string od, List<Product> i)
+        {
+            Order_ID = oId;
+            Customer_ID = cId;
+            Order_Date = od;
+            items = i;
+        }
+
         //Returns product from array at a given index
         public Product getProductAtIndex(int index)
         {

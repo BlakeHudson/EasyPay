@@ -1,0 +1,25 @@
+﻿<Window x:Class="EasyPay.AddOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EasyPay"
+        mc:Ignorable="d"
+        Title="AddOrder" Height="800" Width="550">
+    <StackPanel>
+    <StackPanel Orientation="Horizontal">
+        <StackPanel>
+            <TextBlock x:Name="ProductsTitle" Text="Products" FontSize="20" Margin="0,10" HorizontalAlignment="Center"/>
+            <ListBox x:Name="productsList" Width="250" Height="600" Margin="10,20" ></ListBox>
+            <Button x:Name="AddProduct_Button" Content="Add" Click="AddProduct_Button_Click" Width="80"/>
+        </StackPanel>
+        
+        <StackPanel>
+            <TextBlock x:Name="OrderTitle" Text="Order" Margin="10" FontSize="20" HorizontalAlignment="Center"/>
+            <ListBox x:Name="orderList"  Width="250" Height="600" Margin="10,20" />
+            <Button x:Name="RemoveProduct_Button" Content="Remove" Click="RemoveProduct_Button_Click" Width="80"/>
+        </StackPanel>
+    </StackPanel>
+        <Button x:Name="FinishOrder_Button" Content="Finish" HorizontalAlignment="Center" Width="80" Click="FinishOrder_Button_Click"/>
+    </StackPanel>
+</Window>

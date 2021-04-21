@@ -86,7 +86,8 @@ namespace EasyPay
 
         private void AddOrderButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AddOrder orderWindow = new AddOrder(cust);
+            orderWindow.Show();
         }
     }
 }
