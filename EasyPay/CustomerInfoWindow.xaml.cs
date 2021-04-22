@@ -28,12 +28,28 @@ namespace EasyPay
             cust = c;
             CustIDBlock.Text = "Customer ID: " + cust.Customer_ID;
             LoadAll();
+
         }
 
         public void LoadAll()
         {
             setBoxes();
             LoadOrderList();
+
+            setTotalDue();
+        }
+
+        public void setTotalDue()
+        {
+            double amount = 0.0;
+            foreach(Order o in orders)
+            {
+                List<Product> prods = SQLiteDataAccess.GetProductsByOrderID(o.Order_ID);
+                foreach (Product p in prods)
+                    amount += p.Product_Price;
+            }
+
+            totalBlock.Text = "$" + amount;
         }
 
         public void setBoxes()
