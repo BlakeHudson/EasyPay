@@ -143,6 +143,12 @@ namespace EasyPay
             this.Close();
         }
 
+        private void DeleteOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.Close();
+        }
+
         private void prevPageBtn_Click(object sender, RoutedEventArgs e)
         {
             MenuWindow menuWindow = new MenuWindow();
