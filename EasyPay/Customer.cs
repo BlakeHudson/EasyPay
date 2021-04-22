@@ -41,5 +41,12 @@ namespace EasyPay
         {
             return Customer_ID + ": " + Last_Name + ", " + First_Name + " " + Email;
         }
+
+        public Boolean compareTo(string s)
+        {
+            if (this.ToString() == s)
+                return true;
+            return false;
+        }
     }
 }

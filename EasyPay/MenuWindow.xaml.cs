@@ -79,14 +79,13 @@ namespace EasyPay
 
         private void InfoButton_Click(object sender, RoutedEventArgs e)
         {
-            int id;
             Customer searchedFor = new Customer();
             if (CustomerListBox.SelectedItem != null)
             {
-                id = int.Parse(CustomerListBox.SelectedItem.ToString().Substring(0, 1));
+                string s = CustomerListBox.SelectedItem.ToString();
                 foreach (Customer customer in customers)
                 {
-                    if (customer.Customer_ID == id)
+                    if (customer.compareTo(s))
                     {
                         searchedFor = customer;
                         break;
