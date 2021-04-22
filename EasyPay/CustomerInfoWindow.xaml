@@ -26,9 +26,9 @@
         <Button x:Name="UpdateButton" Content="Update Customer Info" HorizontalAlignment="Left" Margin="611,94,0,0" VerticalAlignment="Top" Width="140" Click="UpdateButton_Click"/>
         <Button x:Name="prevPageBtn" Content="Previous Page" HorizontalAlignment="Left" Margin="661,382,0,0" VerticalAlignment="Top" Width="90" Click="prevPageBtn_Click"/>
         <TextBlock x:Name="amtDueBlock" HorizontalAlignment="Left" Margin="593,180,0,0" TextWrapping="Wrap" Text="Amount due:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="productTotalBlock" HorizontalAlignment="Left" Margin="681,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
+        <TextBlock x:Name="productTotalBlock" HorizontalAlignment="Left" Margin="681,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
         <TextBlock x:Name="totalDueBlock" HorizontalAlignment="Left" Margin="611,224,0,0" TextWrapping="Wrap" Text="Total due:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="totalBlock" HorizontalAlignment="Left" Margin="681,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
+        <TextBlock x:Name="totalBlock" HorizontalAlignment="Left" Margin="681,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
 
     </Grid>
 </Window>
