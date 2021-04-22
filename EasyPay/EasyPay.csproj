@@ -99,6 +99,9 @@
     <Compile Include="OrderDetails.cs" />
     <Compile Include="LoginManager.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductsWindow.xaml.cs">
+      <DependentUpon>ProductsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SQLiteDataAccess.cs" />
     <Page Include="AddCustomerWindow.xaml">
       <SubType>Designer</SubType>
@@ -139,6 +142,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

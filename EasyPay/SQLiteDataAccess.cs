@@ -132,11 +132,21 @@ namespace EasyPay
         /// saves a product to db
         /// </summary>
         /// <param name="product"></param>
-        public static void SaveProducts(Product product)
+        public static void SaveProduct(Product product)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into Product (Product_ID, Product_Name, Product_Price) values (@Product_ID, @Product_name, @Product_Price)", product);
+                cnn.Execute("insert into Product (Product_ID, Product_Name, Product_Price) values (@Product_ID, @Product_Name, @Product_Price)", product);
+            }
+        }
+
+
+        public static void UpdateProduct(Product product)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("Update Product set Product_Name = '" + product.Product_Name + "' where Product_ID = " + product.Product_ID, product);
+                cnn.Execute("update Product set Product_Price = '" + product.Product_Price + "' where Product_ID = " + product.Product_ID, product);
             }
         }
 

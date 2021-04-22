@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="MenuWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" Margin="690,30,0,0" VerticalAlignment="Top" Width="75" Click="SettingsButton_Click"/>
+        <Button x:Name="UserAddButton" Content="Add New User" HorizontalAlignment="Left" Margin="665,15,0,0" VerticalAlignment="Top" Width="100" Click="UserAddButton_Click"/>
         <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="270,30,0,0" VerticalAlignment="Top" Width="75" Click="RefreshButton_Click"/>
         <TextBox x:Name="SearchBar" HorizontalAlignment="Left" Height="20" Margin="50,30,0,0" TextWrapping="Wrap" Text="Search Bar" VerticalAlignment="Top" Width="200"/>
         <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="360,30,0,0" VerticalAlignment="Top" Width="75" Click="SearchButton_Click"/>
         <ListBox x:Name="CustomerListBox" HorizontalAlignment="Left" Height="270" Margin="50,70,0,0" VerticalAlignment="Top" Width="385"/>
         <Button x:Name="InfoButton" Content="See Customer Info" HorizontalAlignment="Left" Margin="316,370,0,0" VerticalAlignment="Top" Width="120" Click="InfoButton_Click"/>
         <Button x:Name="AddCustButton" Content="Add New Customer" HorizontalAlignment="Left" Margin="50,370,0,0" VerticalAlignment="Top" Width="120" Click="AddCustButton_Click"/>
+        <Button x:Name="ProductsButton" Content="Go to Products" HorizontalAlignment="Left" Margin="665,55,0,0" VerticalAlignment="Top" Width="100" Click="ProductsButton_Click"/>
     </Grid>
 </Window>

@@ -66,11 +66,6 @@ namespace EasyPay
             WireUpPeopleList(searchedCustomers);
         }
 
-        private void SettingsButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// refreshes CustomerListBox and resets customers by
         /// reloading db Customers
@@ -109,6 +104,20 @@ namespace EasyPay
         {
             AddCustomerWindow addCustomerWindow = new AddCustomerWindow();
             addCustomerWindow.Show();
+            this.Close();
+        }
+
+        private void ProductsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProductsWindow productsWindow = new ProductsWindow();
+            productsWindow.Show();
+            this.Close();
+        }
+
+        private void UserAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddUser addUser = new AddUser();
+            addUser.Show();
             this.Close();
         }
     }
