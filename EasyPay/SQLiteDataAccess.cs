@@ -207,7 +207,7 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("Delete From [Order] where Order_ID = " + orderNum);
+                cnn.Execute("Delete From [Order] where Order_ID = " + orderNum, orderNum);
             }
         }
 
