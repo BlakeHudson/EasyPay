@@ -80,7 +80,11 @@ namespace EasyPay
                     MessageBox.Show("Adding new Product.");
                     string name = NameBox.Text;
                     double price = double.Parse(PriceBox.Text);
-                    int id = products.Last().Product_ID + 1;
+                    int id;
+                    if (products.Count != 0)
+                        id = products.Last().Product_ID + 1;
+                    else
+                        id = 1;
                     Product product = new Product(id, name, price);
 
                     SQLiteDataAccess.SaveProduct(product);
