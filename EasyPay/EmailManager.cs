@@ -27,7 +27,7 @@ namespace EasyPay
         }
        
         //builds credentials to send email
-        SmtpSender sender = new SmtpSender(() => new SmtpClient(host: "Smtp.gmail.com")
+        SmtpSender sender = new SmtpSender(() => new SmtpClient(host: "Smtp.gmail.com", 587)
         {
             UseDefaultCredentials = false,
             Credentials = new NetworkCredential("easypay0710@gmail.com", "P@55ward"),
