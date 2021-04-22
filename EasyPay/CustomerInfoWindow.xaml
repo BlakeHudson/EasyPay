@@ -15,20 +15,20 @@
         <TextBlock x:Name="EmailBlock" HorizontalAlignment="Left" Margin="400,60,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top"/>
         <TextBox x:Name="EmailBox" HorizontalAlignment="Left" Height="23" Margin="400,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160"/>
         <ListBox x:Name="OrderListBox" HorizontalAlignment="Left" Height="190" Margin="60,180,0,0" VerticalAlignment="Top" Width="230"/>
-        <ListBox x:Name="ProductListBox" HorizontalAlignment="Left" Height="190" Margin="400,180,0,0" VerticalAlignment="Top" Width="230"/>
+        <ListBox x:Name="ProductListBox" HorizontalAlignment="Left" Height="190" Margin="343,180,0,0" VerticalAlignment="Top" Width="230"/>
         <TextBlock x:Name="ordersBlock" HorizontalAlignment="Left" Margin="60,140,0,0" TextWrapping="Wrap" Text="Orders:" VerticalAlignment="Top" FontSize="14"/>
         <Button x:Name="ProductShowButton" Content="ShowProducts" HorizontalAlignment="Left" Margin="166,139,0,0" VerticalAlignment="Top" Width="87" Click="ProductShowButton_Click"/>
         <TextBlock x:Name="productsBlock" HorizontalAlignment="Left" Margin="400,140,0,0" TextWrapping="Wrap" Text="Products Ordered:" VerticalAlignment="Top" FontSize="14"/>
-        <Button x:Name="DeleteOrderButton" Content="Delete Order" HorizontalAlignment="Left" Margin="295,140,0,0" VerticalAlignment="Top" Width="85" Click="DeleteOrderButton_Click"/>
+        <Button x:Name="DeleteOrderButton" Content="Delete Order" HorizontalAlignment="Left" Margin="60,387,0,0" VerticalAlignment="Top" Width="85" Click="DeleteOrderButton_Click"/>
         <Button x:Name="AddOrderButton" Content="Add an Order" HorizontalAlignment="Left" Margin="205,387,0,0" VerticalAlignment="Top" Width="85" Click="AddOrderButton_Click"/>
         <Button x:Name="DeleteButton" Content="Delete Customer" HorizontalAlignment="Left" Margin="651,45,0,0" VerticalAlignment="Top" Width="100" Click="DeleteButton_Click"/>
         <Button x:Name="ReminderButton" Content="Send Reminder" HorizontalAlignment="Left" Margin="651,139,0,0" VerticalAlignment="Top" Width="100" Click="ReminderButton_Click"/>
         <Button x:Name="UpdateButton" Content="Update Customer Info" HorizontalAlignment="Left" Margin="611,94,0,0" VerticalAlignment="Top" Width="140" Click="UpdateButton_Click"/>
         <Button x:Name="prevPageBtn" Content="Previous Page" HorizontalAlignment="Left" Margin="661,382,0,0" VerticalAlignment="Top" Width="90" Click="prevPageBtn_Click"/>
-        <TextBlock x:Name="amtDueBlock" HorizontalAlignment="Left" Margin="400,385,0,0" TextWrapping="Wrap" Text="Amount due:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="productTotalBlock" HorizontalAlignment="Left" Margin="477,385,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83"/>
-        <TextBlock x:Name="totalDueBlock" HorizontalAlignment="Left" Margin="60,385,0,0" TextWrapping="Wrap" Text="Total due:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="totalBlock" HorizontalAlignment="Left" Margin="119,385,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
+        <TextBlock x:Name="amtDueBlock" HorizontalAlignment="Left" Margin="593,180,0,0" TextWrapping="Wrap" Text="Amount due:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="productTotalBlock" HorizontalAlignment="Left" Margin="681,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
+        <TextBlock x:Name="totalDueBlock" HorizontalAlignment="Left" Margin="611,224,0,0" TextWrapping="Wrap" Text="Total due:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="totalBlock" HorizontalAlignment="Left" Margin="681,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
 
     </Grid>
 </Window>

@@ -145,8 +145,17 @@ namespace EasyPay
 
         private void DeleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
+            string s = OrderListBox.SelectedItem.ToString();
+            Order order = new Order();
+            foreach (Order o in orders)
+            {
+                if (o.compareTo(s))
+                    order = o;
+            }
 
-            this.Close();
+            SQLiteDataAccess.deleteOrder(order.Order_ID);
+
+            LoadAll();
         }
 
         private void prevPageBtn_Click(object sender, RoutedEventArgs e)
