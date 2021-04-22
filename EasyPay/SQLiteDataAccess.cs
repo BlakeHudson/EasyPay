@@ -176,6 +176,14 @@ namespace EasyPay
             }
         }
 
+        public static void deleteProductByName(string n)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("Delete From Product where Product_Name = '" + n + "'", n);
+            }
+        }
+
         public static void updateCustomer(Customer customer)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

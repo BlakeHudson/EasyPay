@@ -14,13 +14,14 @@
         <TextBlock x:Name="PriceBlock" HorizontalAlignment="Left" Margin="437,160,0,0" TextWrapping="Wrap" Text="Price:" VerticalAlignment="Top"/>
         <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="23" Margin="512,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="PriceBox" HorizontalAlignment="Left" Height="23" Margin="512,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="SaveButton" Content="Save Changes" HorizontalAlignment="Left" Margin="552,220,0,0" VerticalAlignment="Top" Width="80" Click="SaveButton_Click"/>
-        <Button x:Name="DeselectBtn" Content="Deselect" HorizontalAlignment="Left" Margin="100,370,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="RefreshBtn" Content="Refresh" HorizontalAlignment="Left" Margin="275,370,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBlock x:Name="DeleteBlock" HorizontalAlignment="Left" Margin="430,260,0,0" TextWrapping="Wrap" Text="Delete Product:" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <TextBlock x:Name="IDBlock" HorizontalAlignment="Left" Margin="430,300,0,0" TextWrapping="Wrap" Text="Product ID:" VerticalAlignment="Top"/>
-        <TextBox x:Name="IDBox" HorizontalAlignment="Left" Height="23" Margin="512,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="552,340,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button x:Name="SaveButton" Content="Save Changes" HorizontalAlignment="Left" Margin="552,205,0,0" VerticalAlignment="Top" Width="80" Click="SaveButton_Click"/>
+        <Button x:Name="DeselectBtn" Content="Deselect" HorizontalAlignment="Left" Margin="100,370,0,0" VerticalAlignment="Top" Width="75" Click="DeselectBtn_Click"/>
+        <Button x:Name="RefreshBtn" Content="Refresh" HorizontalAlignment="Left" Margin="275,370,0,0" VerticalAlignment="Top" Width="75" Click="RefreshBtn_Click"/>
+        <TextBlock x:Name="DeleteBlock" HorizontalAlignment="Left" Margin="430,240,0,0" TextWrapping="Wrap" Text="Delete Product:" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <TextBlock x:Name="DeleteNameBlock" HorizontalAlignment="Left" Margin="431,275,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
+        <TextBox x:Name="DeleteBox" HorizontalAlignment="Left" Height="23" Margin="512,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="552,315,0,0" VerticalAlignment="Top" Width="80" Click="DeleteBtn_Click"/>
+        <Button x:Name="PrevButton" Content="Go to Previous Page" HorizontalAlignment="Left" Margin="636,370,0,0" VerticalAlignment="Top" Width="119" Click="PrevButton_Click"/>
 
     </Grid>
 </Window>

@@ -43,7 +43,7 @@ namespace EasyPay
         {
             NameBox.Text = "";
             PriceBox.Text = "";
-            IDBox.Text = "";
+            DeleteBox.Text = "";
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -70,8 +70,7 @@ namespace EasyPay
 
                         SQLiteDataAccess.UpdateProduct(product);
 
-                        setTextBlank();
-                        LoadCustomerList();
+                        Refresh();
                     }
                     else
                         MessageBox.Show("Could not find product index.");
@@ -86,8 +85,7 @@ namespace EasyPay
 
                     SQLiteDataAccess.SaveProduct(product);
 
-                    setTextBlank();
-                    LoadCustomerList();
+                    Refresh();
                 }
             }
             else
@@ -100,6 +98,41 @@ namespace EasyPay
                 Add_UpdateProdBlock.Text = "Update Selected Product: ";
             else
                 Add_UpdateProdBlock.Text = "Add Product: ";
+        }
+
+        private void DeselectBtn_Click(object sender, RoutedEventArgs e)
+        {
+            LoadCustomerList();
+        }
+
+        public void Refresh()
+        {
+            products = SQLiteDataAccess.LoadProducts();            
+            LoadCustomerList();
+            setTextBlank();
+        }
+
+        private void RefreshBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void PrevButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            this.Close();
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(DeleteBox.Text != "")
+            {
+                string name = DeleteBox.Text;
+                SQLiteDataAccess.deleteProductByName(name);
+
+                Refresh();
+            }
         }
     }
 }
