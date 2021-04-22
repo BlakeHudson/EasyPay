@@ -28,12 +28,28 @@ namespace EasyPay
             cust = c;
             CustIDBlock.Text = "Customer ID: " + cust.Customer_ID;
             LoadAll();
+
         }
 
         public void LoadAll()
         {
             setBoxes();
             LoadOrderList();
+
+            setTotalDue();
+        }
+
+        public void setTotalDue()
+        {
+            double amount = 0.0;
+            foreach(Order o in orders)
+            {
+                List<Product> prods = SQLiteDataAccess.GetProductsByOrderID(o.Order_ID);
+                foreach (Product p in prods)
+                    amount += p.Product_Price;
+            }
+
+            totalBlock.Text = "$" + amount;
         }
 
         public void setBoxes()
@@ -59,9 +75,28 @@ namespace EasyPay
         {
             if (OrderListBox.SelectedItem != null)
             {
-                int id;
-                id = int.Parse(OrderListBox.SelectedItem.ToString().Substring(0, 1));
-                ProductListBox.ItemsSource = SQLiteDataAccess.GetProductsByOrderID(id);
+                Order selectedOrder = new Order();
+                string s = OrderListBox.SelectedItem.ToString();
+                if (orders.Count != 0)
+                {
+                    foreach (Order o in orders)
+                    {
+                        if (o.compareTo(s))
+                            selectedOrder = o;
+                    }
+                }
+
+                //id = int.Parse(OrderListBox.SelectedItem.ToString().Substring(0, 1));
+                products = SQLiteDataAccess.GetProductsByOrderID(selectedOrder.Order_ID);
+                ProductListBox.ItemsSource = products;
+                
+                double amount = 0.0;
+                foreach(Product p in products)
+                {
+                    amount += p.Product_Price;
+                }
+                productTotalBlock.Text = "$" + amount;                
+
             }
         }
 
@@ -94,13 +129,14 @@ namespace EasyPay
             EmailManager emailManager = new EmailManager(cust);
             emailManager.SendReminder();
 
-            MessageBox.Show("Paymnet reminder sent.");
+            MessageBox.Show("Payment reminder sent.");
 
             MenuWindow menuWindow = new MenuWindow();
             menuWindow.Show();
+            this.Close();
         }
 
-            private void AddOrderButton_Click(object sender, RoutedEventArgs e)
+        private void AddOrderButton_Click(object sender, RoutedEventArgs e)
         {
             AddOrder orderWindow = new AddOrder(cust);
             orderWindow.Show();

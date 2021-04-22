@@ -13,7 +13,7 @@ namespace EasyPay
         public string Order_Date { get; set; }
         int Product_ID { get; set; }
 
-        IList<Product> items;
+        public IList<Product> items;
 
         public Order()
         {
@@ -54,9 +54,26 @@ namespace EasyPay
             return items.Count();
         }
 
+        public double getTotal()
+        {
+            double total = 0;
+            for (int i = 0; i < items.Count(); i++)
+            {
+                total += items[i].Product_Price;
+            }
+            return total;
+        }
+
         public override string ToString()
         {
             return Order_ID + ", Order Date: " + Order_Date;
+        }
+
+        public Boolean compareTo(string s)
+        {
+            if (this.ToString() == s)
+                return true;
+            return false;
         }
 
     }
