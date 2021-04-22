@@ -69,5 +69,11 @@ namespace EasyPay
             }
 
         }
+        private void prevPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            this.Close();
+        }
     }
 }
