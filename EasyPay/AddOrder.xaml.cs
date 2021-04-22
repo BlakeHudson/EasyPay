@@ -36,9 +36,10 @@ namespace EasyPay
             productsList.ItemsSource = products;
         }
 
-        public void LoadOrderList()
+        public void LoadOrderList(List<Product> order)
         {
-            orderList.ItemsSource = newOrder;
+            orderList.ItemsSource = null;
+            orderList.ItemsSource = order;
         }
 
         private void AddProduct_Button_Click(object sender, RoutedEventArgs e)
@@ -55,7 +56,7 @@ namespace EasyPay
             }
 
             LoadProductsList();
-            LoadOrderList();
+            LoadOrderList(newOrder);
         }
         private void RemoveProduct_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -70,7 +71,7 @@ namespace EasyPay
             }
 
             LoadProductsList();
-            LoadOrderList();
+            LoadOrderList(newOrder);
         }
 
         private void FinishOrder_Button_Click(object sender, RoutedEventArgs e)
