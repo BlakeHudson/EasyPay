@@ -78,9 +78,10 @@ namespace EasyPay
         {
             List<Order> allOrders = SQLiteDataAccess.LoadOrders();
             int i = 1;
+
             if(allOrders.Count != 0)
             {
-                i = allOrders.Count + 1;
+                i = allOrders.Last().Order_ID + 1;
             }
 
             Order finishedOrder = new Order(i, customer.Customer_ID, System.DateTime.Today.ToString());
