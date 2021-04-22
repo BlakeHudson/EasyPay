@@ -20,7 +20,8 @@
         <Button x:Name="ProductShowButton" Content="ShowProducts" HorizontalAlignment="Left" Margin="203,140,0,0" VerticalAlignment="Top" Width="87" Click="ProductShowButton_Click"/>
         <TextBlock x:Name="productsBlock" HorizontalAlignment="Left" Margin="400,140,0,0" TextWrapping="Wrap" Text="Products Ordered:" VerticalAlignment="Top" FontSize="14"/>
         <Button x:Name="AddOrderButton" Content="Add an Order" HorizontalAlignment="Left" Margin="190,382,0,0" VerticalAlignment="Top" Width="100" Click="AddOrderButton_Click"/>
-        <Button x:Name="DeleteButton" Content="Delete Customer" HorizontalAlignment="Left" Margin="651,25,0,0" VerticalAlignment="Top" Width="100" Click="DeleteButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Delete Customer" HorizontalAlignment="Left" Margin="651,45,0,0" VerticalAlignment="Top" Width="100" Click="DeleteButton_Click"/>
+        <Button x:Name="ReminderButton" Content="Send Reminder" HorizontalAlignment="Left" Margin="651,139,0,0" VerticalAlignment="Top" Width="100" Click="ReminderButton_Click"/>
         <Button x:Name="UpdateButton" Content="Update Customer Info" HorizontalAlignment="Left" Margin="611,94,0,0" VerticalAlignment="Top" Width="140" Click="UpdateButton_Click"/>
         <Button x:Name="prevPageBtn" Content="Previous Page" HorizontalAlignment="Left" Margin="661,382,0,0" VerticalAlignment="Top" Width="90" Click="prevPageBtn_Click"/>
 

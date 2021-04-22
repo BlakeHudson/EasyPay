@@ -25,7 +25,14 @@ namespace EasyPay
                 body += receipt.getProductAtIndex(i).ToString();
             }
         }
-       
+
+        public EmailManager(Customer a)
+        {
+            recepient = a;
+            this.body = "";
+        }
+
+
         //builds credentials to send email
         SmtpSender sender = new SmtpSender(() => new SmtpClient(host: "Smtp.gmail.com", 587)
         {
@@ -36,7 +43,7 @@ namespace EasyPay
         });
         
                
-        //Builds email and sends it
+        //Builds initial order email and sends it
         public void SendEmail()
         {
             sender.Send(Email
@@ -44,6 +51,18 @@ namespace EasyPay
                 .To(emailAddress: recepient.Email, name: recepient.Last_Name + ", " + recepient.First_Name)
                 .Subject(subject: "Service Invoice")
                 .Body(body: "This is an email to inform you of a requested payment from Company A \n" + body)
+               );
+        }
+
+        //Builds reminderemail and sends it
+        public void SendReminder()
+        {
+            sender.Send(Email
+                .From(emailAddress: "noReply@noReply.com")
+                .To(emailAddress: recepient.Email, name: recepient.Last_Name + ", " + recepient.First_Name)
+                .Subject(subject: "Payment Reminder")
+                .Body(body: "This is to remind you of a requested payment from Company A \n" +
+                " Please contact a representative for more details\n")
                );
         }
     }

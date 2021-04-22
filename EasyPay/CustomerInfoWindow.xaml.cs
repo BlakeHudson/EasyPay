@@ -89,7 +89,18 @@ namespace EasyPay
             this.Close();
         }
 
-        private void AddOrderButton_Click(object sender, RoutedEventArgs e)
+        private void ReminderButton_Click(object sender, RoutedEventArgs e)
+        {
+            EmailManager emailManager = new EmailManager(cust);
+            emailManager.SendReminder();
+
+            MessageBox.Show("Paymnet reminder sent.");
+
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+        }
+
+            private void AddOrderButton_Click(object sender, RoutedEventArgs e)
         {
             AddOrder orderWindow = new AddOrder(cust);
             orderWindow.Show();
