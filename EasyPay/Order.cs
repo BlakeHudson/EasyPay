@@ -8,9 +8,9 @@ namespace EasyPay
 {
     public class Order
     {
-        int Order_ID { get; set; }
-        int Customer_ID { get; set; }
-        string Order_Date { get; set; }
+        public int Order_ID {get; set; }
+        public int Customer_ID { get; set; }
+        public string Order_Date { get; set; }
         int Product_ID { get; set; }
 
         IList<Product> items;
@@ -35,15 +35,22 @@ namespace EasyPay
             items = i;
         }
 
+        public void setItems()
+        {
+            items = SQLiteDataAccess.GetProductsByOrderID(Order_ID);
+        }
+
         //Returns product from array at a given index
         public Product getProductAtIndex(int index)
         {
+            setItems();
             return items[index];
            
         }
 
         public int size()
         {
+            setItems();
             return items.Count();
         }
 

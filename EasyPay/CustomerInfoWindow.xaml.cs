@@ -93,6 +93,14 @@ namespace EasyPay
         {
             AddOrder orderWindow = new AddOrder(cust);
             orderWindow.Show();
+            this.Close();
+        }
+
+        private void prevPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            this.Close();
         }
     }
 }

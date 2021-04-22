@@ -11,18 +11,20 @@ namespace EasyPay
     /// </summary>
     public class OrderDetails
     {
-        int Order_ID { get; set; }
-        int Product_ID { get; set; }
+        public int Order_ID { get; set; }
+        public int Product_ID { get; set; }
+        public double Product_Price { get; set; }
 
         public OrderDetails()
         {
 
         }
 
-        public OrderDetails(int Orderid, int Productid)
+        public OrderDetails(int Orderid, int Productid, double p)
         {
             Order_ID = Orderid;
             Product_ID = Productid;
+            Product_Price = p;
         }
     }
 }

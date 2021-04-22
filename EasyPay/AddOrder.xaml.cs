@@ -19,33 +19,89 @@ namespace EasyPay
     /// </summary>
     public partial class AddOrder : Window
     {
-        List<Product> order = null;
+        List<Product> products = new List<Product>();
+        List<Product> newOrder = new List<Product>();
         Customer customer;
         public AddOrder(Customer cust)
         {            
             InitializeComponent();
-            productsList.ItemsSource = SQLiteDataAccess.LoadProducts();
+            
             customer = cust;
+            LoadProductsList();
+        }
+
+        public void LoadProductsList()
+        {
+            products = SQLiteDataAccess.LoadProducts();
+            productsList.ItemsSource = products;
+        }
+
+        public void LoadOrderList()
+        {
+            orderList.ItemsSource = newOrder;
         }
 
         private void AddProduct_Button_Click(object sender, RoutedEventArgs e)
         {
-            order.Add(SQLiteDataAccess.LoadProducts()[productsList.SelectedIndex]);
-            orderList.ItemsSource = order;
+            //order.Add(SQLiteDataAccess.LoadProducts()[productsList.SelectedIndex]);
+            string s = productsList.SelectedItem.ToString();
+            foreach(Product p in products)
+            {
+                if(p.compareTo(s))
+                {
+                    newOrder.Add(p);
+                    break;
+                }
+            }
 
+            LoadProductsList();
+            LoadOrderList();
         }
         private void RemoveProduct_Button_Click(object sender, RoutedEventArgs e)
         {
-            order.RemoveAt(orderList.SelectedIndex);
-            orderList.ItemsSource = order;
+            string s = orderList.SelectedItem.ToString();
+            foreach (Product p in newOrder)
+            {
+                if (p.compareTo(s))
+                {
+                    newOrder.Remove(p);
+                    break;
+                }
+            }
+
+            LoadProductsList();
+            LoadOrderList();
         }
 
         private void FinishOrder_Button_Click(object sender, RoutedEventArgs e)
         {
-            Order finishedOrder = new Order(1,customer.Customer_ID,""+System.DateTime.Today,order);
+            List<Order> allOrders = SQLiteDataAccess.LoadOrders();
+            int i = 1;
+            if(allOrders.Count != 0)
+            {
+                i = allOrders.Count + 1;
+            }
+
+            Order finishedOrder = new Order(i, customer.Customer_ID, System.DateTime.Today.ToString());
             SQLiteDataAccess.SaveOrder(finishedOrder);
+
+            OrderDetails od = new OrderDetails();
+            od.Order_ID = i;
+
+            foreach(Product p in newOrder)
+            {
+                od.Product_ID = p.Product_ID;
+                od.Product_Price = p.Product_Price;
+
+                SQLiteDataAccess.SaveOrderDetails(od);
+            }
+            
             EmailManager emailManager = new EmailManager(customer, finishedOrder);
             emailManager.SendEmail();
+
+            CustomerInfoWindow customerInfoWindow = new CustomerInfoWindow(customer);
+            customerInfoWindow.Show();
+            this.Close();
         }
     }
 }
