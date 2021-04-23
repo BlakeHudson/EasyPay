@@ -38,9 +38,10 @@ namespace EasyPay
             // Username entered in Username Text box
             string unEntered = Username.Text;
             int userIndex = LoginManager.indexOfUser(unEntered);
+            string pwEntered = passwordBox.Password;
            
             // If the username is valid and password is correct continue, else bad credientials
-            if (userIndex >= 0 && LoginManager.validPassword(userIndex, unEntered))
+            if (userIndex >= 0 && LoginManager.validPassword(userIndex, pwEntered))
             {
 
                 MainWindow dashboard = new MainWindow();

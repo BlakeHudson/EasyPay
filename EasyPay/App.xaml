@@ -10,6 +10,7 @@
             <Setter Property="Foreground" Value="Black"/>
         </Style>
 
+
         <Style TargetType="ListBox">
             <Setter Property="Background" Value="Khaki"/>
             <Setter Property="Selector.OpacityMask" Value="LightGray"/>
