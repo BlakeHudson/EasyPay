@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:EasyPay"
         mc:Ignorable="d"
         Title="AddUser" Height="450" Width="800">
-    <Window.Background>
-        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
-    </Window.Background>
     <Grid x:Name="Password" Margin="0,0,3.6,0">
         <Grid.ColumnDefinitions>
 

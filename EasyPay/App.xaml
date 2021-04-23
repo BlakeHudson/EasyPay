@@ -4,6 +4,51 @@
              xmlns:local="clr-namespace:EasyPay"
              StartupUri="Login.xaml">
     <Application.Resources>
-         
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+        <Style TargetType="ListBox">
+            <Setter Property="Background" Value="Khaki"/>
+            <Setter Property="Selector.OpacityMask" Value="LightGray"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="Khaki"/>
+            <Setter Property="Height" Value="24"/>
+        </Style>
+
+        <Style TargetType="PasswordBox">
+            <Setter Property="Background" Value="Khaki"/>
+            <Setter Property="Height" Value="24"/>
+        </Style>
+
+        <Style TargetType="local:AddCustomerWindow">
+            <Setter Property="Background" Value="SteelBlue"/>
+        </Style>
+
+        <Style TargetType="local:AddUser">
+            <Setter Property="Background" Value="SteelBlue"/>
+        </Style>
+
+        <Style TargetType="local:Login">
+            <Setter Property="Background" Value="SteelBlue"/>
+            <Setter Property="WindowStyle" Value="SingleBorderWindow"/>
+        </Style>
+
+        <Style TargetType="local:MainWindow">
+            <Setter Property="Background" Value="SteelBlue"/>
+        </Style>
+
+        <Style TargetType="local:MenuWindow">
+            <Setter Property="Background" Value="SteelBlue"/>
+        </Style>
+
+        <Style TargetType="local:ProductsWindow">
+            <Setter Property="Background" Value="SteelBlue"/>
+        </Style>
+
     </Application.Resources>
 </Application>
