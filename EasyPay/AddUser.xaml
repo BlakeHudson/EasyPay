@@ -16,9 +16,9 @@
         <Label Content="Confirm Password" Margin="71,321,72,64" FontSize="14"/>
 
 
-        <TextBox x:Name="newUsername" HorizontalAlignment="Left" Height="35" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="368" Margin="215,190,0,0" FontSize="14"/>
-        <PasswordBox x:Name="newPasswordBox" HorizontalAlignment="Left" Height="33" Margin="215,257,0,0" VerticalAlignment="Top" Width="368" FontSize="14"/>
-        <PasswordBox x:Name="confirmPasswordBox" HorizontalAlignment="Left" Height="33" Margin="215,321,0,0" VerticalAlignment="Top" Width="368" FontSize="14"/>
+        <TextBox x:Name="newUsername" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="368" Margin="215,190,0,0" FontSize="14"/>
+        <PasswordBox x:Name="newPasswordBox" HorizontalAlignment="Left" Margin="215,257,0,0" VerticalAlignment="Top" Width="368" FontSize="14"/>
+        <PasswordBox x:Name="confirmPasswordBox" HorizontalAlignment="Left" Margin="215,321,0,0" VerticalAlignment="Top" Width="368" FontSize="14"/>
         <Button x:Name="Add_User" Content="Add" Click="addUser_Submit_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Margin="450,376,265,0"/>
 
         <Button x:Name="prevPageBtn" Content="Previous Page" HorizontalAlignment="Left" Margin="278,376,0,0" VerticalAlignment="Top" Width="90" Click="prevPageBtn_Click"/>
