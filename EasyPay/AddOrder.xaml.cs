@@ -79,18 +79,23 @@ namespace EasyPay
             List<Order> allOrders = SQLiteDataAccess.LoadOrders();
             int i = 1;
 
+            /*
             if(allOrders.Count != 0)
             {
                 i = allOrders.Last().Order_ID + 1;
             }
+            */
 
             Order finishedOrder = new Order(i, customer.Customer_ID, System.DateTime.Today.ToString());
             SQLiteDataAccess.SaveOrder(finishedOrder);
 
+            allOrders = SQLiteDataAccess.LoadOrders();
             OrderDetails od = new OrderDetails();
-            od.Order_ID = i;
 
-            foreach(Product p in newOrder)
+            od.Order_ID = allOrders.Last().Order_ID;
+            finishedOrder = allOrders.Last();
+
+            foreach (Product p in newOrder)
             {
                 od.Product_ID = p.Product_ID;
                 od.Product_Price = p.Product_Price;

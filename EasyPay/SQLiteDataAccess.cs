@@ -86,7 +86,7 @@ namespace EasyPay
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into [Order] (Order_ID, Customer_ID, Order_Date) values (" + order.Order_ID + ", " + order.Customer_ID
+                cnn.Execute("insert into [Order] (Customer_ID, Order_Date) values ("+ order.Customer_ID
                     + ", '" + order.Order_Date + "')", order);
             }
         }
