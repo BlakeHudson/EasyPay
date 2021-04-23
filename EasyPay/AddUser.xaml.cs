@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 
 namespace EasyPay
@@ -42,12 +32,12 @@ namespace EasyPay
             String pw;          // To store entered password
             String confirmPw;   // To store confirmed password
             EasyPayUser newUser;// Init new EasyPayUser
-            
+
             // Store entered username and encrypted passwords
             un = newUsername.Text;
             pw = Encode_Decode.Encrypt(newPasswordBox.Password);
             confirmPw = Encode_Decode.Encrypt(confirmPasswordBox.Password);
-            
+
             /* If password entered and confrirm passwords match, proceed to
             * create an EasyPayUser with data etered and save it to db
             * Inform user that a new user was added and open main window
@@ -71,9 +61,12 @@ namespace EasyPay
         }
         private void prevPageBtn_Click(object sender, RoutedEventArgs e)
         {
-            MenuWindow menuWindow = new MenuWindow();
-            menuWindow.Show();
-            this.Close();
+            if (SQLiteDataAccess.LoadUsers().Count() != 0)
+            {
+                MenuWindow menuWindow = new MenuWindow();
+                menuWindow.Show();
+                this.Close();
+            }
         }
     }
 }
