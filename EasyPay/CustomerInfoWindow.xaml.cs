@@ -117,6 +117,11 @@ namespace EasyPay
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             SQLiteDataAccess.deleteCustomer(cust);
+            foreach(Order o in orders)
+            {
+                SQLiteDataAccess.deleteOrderDetailsByOrderID(o.Order_ID);
+                SQLiteDataAccess.deleteOrder(o.Order_ID);
+            }
             MessageBox.Show("Customer info deleted.");
 
             MenuWindow menuWindow = new MenuWindow();
