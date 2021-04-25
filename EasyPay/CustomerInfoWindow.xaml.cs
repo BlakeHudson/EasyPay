@@ -154,6 +154,7 @@ namespace EasyPay
             }
 
             SQLiteDataAccess.deleteOrder(order.Order_ID);
+            SQLiteDataAccess.deleteOrderDetailsByOrderID(order.Order_ID);
 
             LoadAll();
         }
