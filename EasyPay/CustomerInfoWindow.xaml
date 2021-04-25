@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:EasyPay"
         mc:Ignorable="d"
         Title="CustomerInfoWindow" Height="450" Width="800">
+    <Window.Background>
+        <SolidColorBrush Color="SteelBlue"/>
+    </Window.Background>
     <Grid>
         <TextBlock x:Name="CustIDBlock" HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Customer ID: " VerticalAlignment="Top" FontSize="18"/>
         <TextBlock x:Name="LNameBlock" HorizontalAlignment="Left" Margin="60,60,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Height="30" Width="70"/>
